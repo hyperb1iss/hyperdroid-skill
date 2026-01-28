@@ -4,18 +4,30 @@ Compatible with the [skills.sh](https://skills.sh) open agent ecosystem.
 
 ## Installation
 
+### Vercel Skills (npx)
+
 ```bash
 # Install for all supported agents
-npx add-skill hyperb1iss/android-skill
+npx skills add hyperb1iss/hyperdroid-skill
 
 # Install for specific agent
-npx add-skill hyperb1iss/android-skill -a claude-code
-npx add-skill hyperb1iss/android-skill -a cursor
-npx add-skill hyperb1iss/android-skill -a copilot
-npx add-skill hyperb1iss/android-skill -a gemini
+npx skills add hyperb1iss/hyperdroid-skill -a cursor
+npx skills add hyperb1iss/hyperdroid-skill -a copilot
+npx skills add hyperb1iss/hyperdroid-skill -a codex
+npx skills add hyperb1iss/hyperdroid-skill -a gemini
 
 # List available skills
-npx add-skill hyperb1iss/android-skill --list
+npx skills add hyperb1iss/hyperdroid-skill --list
+```
+
+### Claude Code Plugin
+
+```bash
+# Add the marketplace
+/plugin marketplace add hyperb1iss/hyperdroid-skill
+
+# Install the plugin
+/plugin install hyperdroid
 ```
 
 ## Supported Agents
@@ -78,9 +90,9 @@ Activates when the user mentions:
 
 ## Agent Registry
 
-### Device Interaction (`android:android`)
+### Device Interaction (`hyperdroid:android`)
 
-- `android:crash-analyzer` — Autonomous crash investigation: collects logs, tombstones, ANR traces, provides root cause diagnosis
+- `hyperdroid:crash-analyzer` — Autonomous crash investigation: collects logs, tombstones, ANR traces, provides root cause diagnosis
 
 ## Directory Structure
 
@@ -115,19 +127,19 @@ skills/
 
 ## Usage
 
-Invoke skills with `/android-skill:<skill>`:
+Invoke skills with `/hyperdroid-skill:<skill>`:
 
 ```bash
-/android-skill:android              # Device interaction guidance
-/android-skill:android-bootloader   # Fastboot and recovery
-/android-skill:android-build        # Build system expertise
-/android-skill:lineageos            # Custom ROM development
+/hyperdroid-skill:android              # Device interaction guidance
+/hyperdroid-skill:android-bootloader   # Fastboot and recovery
+/hyperdroid-skill:android-build        # Build system expertise
+/hyperdroid-skill:lineageos            # Custom ROM development
 ```
 
 Agents are invoked via the Task tool:
 
 ```
-Task(subagent_type="android:crash-analyzer", prompt="My app crashes on startup...")
+Task(subagent_type="hyperdroid:crash-analyzer", prompt="My app crashes on startup...")
 ```
 
 ## License

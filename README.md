@@ -1,5 +1,5 @@
 <h1 align="center">
-  🤖 android-skill
+  🤖 hyperdroid-skill
 </h1>
 
 <p align="center">
@@ -15,8 +15,8 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/hyperb1iss/android-skill/blob/main/LICENSE">
-    <img src="https://img.shields.io/github/license/hyperb1iss/android-skill?style=flat-square&logo=opensourceinitiative&logoColor=white" alt="License">
+  <a href="https://github.com/hyperb1iss/hyperdroid-skill/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/hyperb1iss/hyperdroid-skill?style=flat-square&logo=opensourceinitiative&logoColor=white" alt="License">
   </a>
 </p>
 
@@ -32,7 +32,7 @@
 
 ## 💎 What This Is
 
-**android-skill** is a comprehensive Claude Code plugin for Android development—from debugging a misbehaving app to building entire custom ROMs. Whether you're a hobbyist flasher or a full-time ROM maintainer, these skills have you covered.
+**hyperdroid-skill** is an elite Claude Code plugin for Android development—from debugging a misbehaving app to building entire custom ROMs. Whether you're a hobbyist flasher or a full-time ROM maintainer, these skills have you covered.
 
 Instead of digging through Stack Overflow and XDA threads, get **domain expertise** directly:
 
@@ -99,11 +99,11 @@ LineageOS-specific development workflows:
 
 ## 🦋 Agents
 
-Agents are invoked via the Task tool with `subagent_type="android:agent-name"`.
+Agents are invoked via the Task tool with `subagent_type="hyperdroid:agent-name"`.
 
 | Agent | Specialty |
 |-------|-----------|
-| `android:crash-analyzer` | Autonomous crash investigation — collects logs, tombstones, ANR traces, analyzes native crashes, provides root cause diagnosis |
+| `hyperdroid:crash-analyzer` | Autonomous crash investigation — collects logs, tombstones, ANR traces, analyzes native crashes, provides root cause diagnosis |
 
 ### Crash Analyzer
 
@@ -126,46 +126,50 @@ When your app or device is misbehaving, this agent:
 
 ```bash
 # Install for all supported agents
-npx add-skill hyperb1iss/android-skill
+npx skills add hyperb1iss/hyperdroid-skill
 
 # Install for a specific agent
-npx add-skill hyperb1iss/android-skill -a cursor
-npx add-skill hyperb1iss/android-skill -a copilot
-npx add-skill hyperb1iss/android-skill -a codex
-npx add-skill hyperb1iss/android-skill -a gemini
+npx skills add hyperb1iss/hyperdroid-skill -a cursor
+npx skills add hyperb1iss/hyperdroid-skill -a copilot
+npx skills add hyperb1iss/hyperdroid-skill -a codex
+npx skills add hyperb1iss/hyperdroid-skill -a gemini
 ```
 
-### Claude Code
+### Claude Code Plugin
 
 ```bash
-/plugin install android-skill
+# Add the marketplace
+/plugin marketplace add hyperb1iss/hyperdroid-skill
+
+# Install the plugin
+/plugin install hyperdroid
 ```
 
 ### Manual
 
 ```bash
-git clone https://github.com/hyperb1iss/android-skill.git
-ln -s $(pwd)/android-skill ~/.claude/plugins/android-skill
+git clone https://github.com/hyperb1iss/hyperdroid-skill.git
+ln -s $(pwd)/hyperdroid-skill ~/.claude/plugins/hyperdroid-skill
 ```
 
 ### Test Locally
 
 ```bash
-claude --plugin-dir ./android-skill
+claude --plugin-dir ./hyperdroid-skill
 ```
 
 ### Compatibility
 
 | Platform | Install Method |
 |----------|----------------|
-| **Claude Code** | `/plugin install android-skill` |
-| **Vercel Skills** | `npx add-skill hyperb1iss/android-skill` |
-| **Codex CLI** | `npx add-skill hyperb1iss/android-skill -a codex` |
-| **Cursor** | `npx add-skill hyperb1iss/android-skill -a cursor` |
-| **GitHub Copilot** | `npx add-skill hyperb1iss/android-skill -a copilot` |
-| **Gemini CLI** | `npx add-skill hyperb1iss/android-skill -a gemini` |
-| **Amp** | `npx add-skill hyperb1iss/android-skill -a amp` |
-| **Opencode** | `npx add-skill hyperb1iss/android-skill -a opencode` |
+| **Claude Code** | `/plugin marketplace add hyperb1iss/hyperdroid-skill` |
+| **Vercel Skills** | `npx skills add hyperb1iss/hyperdroid-skill` |
+| **Codex CLI** | `npx skills add hyperb1iss/hyperdroid-skill -a codex` |
+| **Cursor** | `npx skills add hyperb1iss/hyperdroid-skill -a cursor` |
+| **GitHub Copilot** | `npx skills add hyperb1iss/hyperdroid-skill -a copilot` |
+| **Gemini CLI** | `npx skills add hyperb1iss/hyperdroid-skill -a gemini` |
+| **Amp** | `npx skills add hyperb1iss/hyperdroid-skill -a amp` |
+| **Opencode** | `npx skills add hyperb1iss/hyperdroid-skill -a opencode` |
 
 ## 🎯 Usage
 
@@ -188,10 +192,10 @@ Skills activate automatically based on context:
 Or invoke directly:
 
 ```bash
-/android-skill:android          # Device interaction guidance
-/android-skill:android-bootloader   # Fastboot and recovery
-/android-skill:android-build    # Build system expertise
-/android-skill:lineageos        # Custom ROM development
+/hyperdroid-skill:android              # Device interaction guidance
+/hyperdroid-skill:android-bootloader   # Fastboot and recovery
+/hyperdroid-skill:android-build        # Build system expertise
+/hyperdroid-skill:lineageos            # Custom ROM development
 ```
 
 ## 🧪 SOTA Knowledge
@@ -237,7 +241,7 @@ Every skill is enhanced with modern Android development knowledge (2024-2026):
 ## 📦 Structure
 
 ```
-android-skill/
+hyperdroid-skill/
 ├── .claude-plugin/
 │   ├── plugin.json              # Claude Code manifest
 │   └── marketplace.json         # skills.sh distribution index
@@ -271,8 +275,8 @@ android-skill/
 
 ```bash
 # Clone
-git clone https://github.com/hyperb1iss/android-skill.git
-cd android-skill
+git clone https://github.com/hyperb1iss/hyperdroid-skill.git
+cd hyperdroid-skill
 
 # Lint & format
 make lint
@@ -317,8 +321,8 @@ Licensed under the MIT License. See [LICENSE](LICENSE) for details.
 ---
 
 <p align="center">
-  <a href="https://github.com/hyperb1iss/android-skill">
-    <img src="https://img.shields.io/github/stars/hyperb1iss/android-skill?style=social" alt="Star on GitHub">
+  <a href="https://github.com/hyperb1iss/hyperdroid-skill">
+    <img src="https://img.shields.io/github/stars/hyperb1iss/hyperdroid-skill?style=social" alt="Star on GitHub">
   </a>
   &nbsp;&nbsp;
   <a href="https://ko-fi.com/hyperb1iss">

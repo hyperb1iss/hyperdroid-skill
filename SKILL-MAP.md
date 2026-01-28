@@ -1,4 +1,4 @@
-# Android Plugin - Skill Map
+# Hyperdroid Plugin - Skill Map
 
 **Philosophy:** 4 skills. Progressive disclosure. Start simple, go deep when needed.
 
@@ -31,7 +31,7 @@
 ## Directory Structure
 
 ```
-android-skill/
+hyperdroid-skill/
 ├── .claude-plugin/plugin.json
 ├── skills/
 │   ├── android/

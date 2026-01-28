@@ -1,13 +1,13 @@
 {
-  "name": "android",
+  "name": "hyperdroid",
   "version": "1.0.0",
-  "description": "Comprehensive Android development skills - ADB mastery, debugging, fastboot, ROM building, and LineageOS development",
+  "description": "Elite Android development skills - ADB mastery, fastboot sorcery, ROM building, and LineageOS development",
   "author": {
     "name": "Stefanie Jane",
     "url": "https://hyperbliss.tech"
   },
-  "homepage": "https://github.com/hyperb1iss/android-skill",
-  "repository": "https://github.com/hyperb1iss/android-skill",
+  "homepage": "https://github.com/hyperb1iss/hyperdroid-skill",
+  "repository": "https://github.com/hyperb1iss/hyperdroid-skill",
   "license": "MIT",
   "keywords": [
     "android",
