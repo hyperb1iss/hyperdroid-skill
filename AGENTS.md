@@ -46,47 +46,9 @@ npx skills add hyperb1iss/hyperdroid-skill --list
 | Skill | Description |
 | --- | --- |
 | `android` | Device mastery via ADB — debugging, shell, app management, UI automation |
-| `android-bootloader` | Fastboot, partition flashing, bootloader unlocking, recovery, root |
+| `android-fastboot` | Fastboot, partition flashing, bootloader unlocking, recovery, root |
 | `android-build` | Gradle CLI, SDK tools, AOSP build system, kernels, device trees |
 | `lineageos` | Custom ROM development — breakfast/brunch, repopick, Gerrit workflow |
-
-## Skill Triggers
-
-### android
-
-Activates when the user mentions:
-
-- `adb`, logcat, shell commands, device debugging
-- App installation, screenshots, UI automation
-- dumpsys, getprop, system inspection
-- Crash analysis, memory profiling, ANR traces
-
-### android-bootloader
-
-Activates when the user mentions:
-
-- `fastboot`, flash, partition management
-- Bootloader unlock, recovery mode, TWRP
-- Magisk, KernelSU, root operations
-- A/B slots, dynamic partitions
-
-### android-build
-
-Activates when the user mentions:
-
-- Gradle build, assemble, lint, test tasks
-- AOSP, envsetup, lunch, mka
-- SDK manager, emulator, AVD
-- Device trees, kernel compilation
-
-### lineageos
-
-Activates when the user mentions:
-
-- LineageOS, breakfast, brunch, mka bacon
-- repopick, Gerrit, code review
-- Vendor blobs, extract-files.sh
-- Local manifests, device porting
 
 ## Agent Registry
 
@@ -102,7 +64,7 @@ skills/
 │   ├── SKILL.md              # Device mastery — ADB, debugging, system inspection
 │   └── references/
 │       └── deep-dive.md      # Advanced ADB techniques
-├── android-bootloader/
+├── android-fastboot/
 │   ├── SKILL.md              # Fastboot, flashing, recovery, root
 │   └── references/
 │       └── partitions.md     # Partition layouts & A/B mechanics
@@ -131,7 +93,7 @@ Invoke skills with `/hyperdroid-skill:<skill>`:
 
 ```bash
 /hyperdroid-skill:android              # Device interaction guidance
-/hyperdroid-skill:android-bootloader   # Fastboot and recovery
+/hyperdroid-skill:android-fastboot     # Fastboot and recovery
 /hyperdroid-skill:android-build        # Build system expertise
 /hyperdroid-skill:lineageos            # Custom ROM development
 ```

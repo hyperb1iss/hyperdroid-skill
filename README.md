@@ -50,7 +50,7 @@ Skills are contextual knowledge bundles that auto-activate when relevant. Ask ab
 | Skill | Domain | Triggers |
 |-------|--------|----------|
 | `android` | Device Mastery | ADB, logcat, shell, app management, UI automation, debugging |
-| `android-bootloader` | Danger Zone | Fastboot, partitions, A/B slots, recovery, Magisk, unlocking |
+| `android-fastboot` | Danger Zone | Fastboot, partitions, A/B slots, recovery, Magisk, unlocking |
 | `android-build` | Build Systems | Gradle CLI, SDK manager, AOSP envsetup/lunch/m, kernels |
 | `lineageos` | Custom ROMs | breakfast/brunch, repopick, Gerrit, vendor blobs, porting |
 
@@ -65,7 +65,7 @@ Everything about interacting with Android devices via ADB:
 - **Debugging** — Logcat filtering, crash analysis, memory profiling, strict mode
 - **System Inspection** — dumpsys, getprop, /proc exploration, service calls
 
-### ⚠️ `android-bootloader` — Danger Zone
+### ⚠️ `android-fastboot` — Danger Zone
 
 Fastboot and bootloader operations with appropriate safety warnings:
 
@@ -180,7 +180,7 @@ Skills activate automatically based on context:
 [android skill activates — guides through adb tcpip setup]
 
 > Flash the custom boot image I just built
-[android-bootloader skill activates — provides safe fastboot workflow]
+[android-fastboot skill activates — provides safe fastboot workflow]
 
 > Build LineageOS for my Pixel 8
 [lineageos skill activates — walks through breakfast/brunch process]
@@ -193,7 +193,7 @@ Or invoke directly:
 
 ```bash
 /hyperdroid-skill:android              # Device interaction guidance
-/hyperdroid-skill:android-bootloader   # Fastboot and recovery
+/hyperdroid-skill:android-fastboot   # Fastboot and recovery
 /hyperdroid-skill:android-build        # Build system expertise
 /hyperdroid-skill:lineageos            # Custom ROM development
 ```
@@ -251,7 +251,7 @@ hyperdroid-skill/
 │   │   ├── SKILL.md             # Quick reference + triggers
 │   │   └── references/          # Deep documentation
 │   │       └── deep-dive.md     # Advanced ADB techniques
-│   ├── android-bootloader/
+│   ├── android-fastboot/
 │   │   ├── SKILL.md
 │   │   └── references/
 │   │       └── partitions.md    # Partition layouts & safety

@@ -11,7 +11,7 @@
 
 **Triggers:** "adb", "device", "install app", "logcat", "crash", "debug", "screenshot", "shell"
 
-### 2. `android-bootloader` - Danger Zone
+### 2. `android-fastboot` - Danger Zone
 **Fastboot, flashing, recovery.** Kept separate because mistakes brick devices.
 
 **Triggers:** "fastboot", "flash", "unlock bootloader", "recovery", "partition"
@@ -37,7 +37,7 @@ hyperdroid-skill/
 │   ├── android/
 │   │   ├── SKILL.md
 │   │   └── references/deep-dive.md
-│   ├── android-bootloader/
+│   ├── android-fastboot/
 │   │   ├── SKILL.md
 │   │   └── references/partitions.md
 │   ├── android-build/
@@ -60,7 +60,7 @@ hyperdroid-skill/
 | Skill | Lines |
 |-------|-------|
 | android | 374 + 433 refs |
-| android-bootloader | 317 + 272 refs |
+| android-fastboot | 317 + 272 refs |
 | android-build | 380 + 706 refs |
 | lineageos | 311 + 179 refs |
 | crash-analyzer agent | 138 |

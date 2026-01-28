@@ -1,9 +1,9 @@
 ---
-name: android-bootloader
+name: android-fastboot
 description: Use for fastboot operations, flashing partitions, bootloader unlocking, recovery mode, or partition management. Triggers on "fastboot", "flash boot.img", "unlock bootloader", "recovery mode", "TWRP", "Magisk", "partition", "sideload", "A/B slots". WARNING - These operations can brick devices if done incorrectly.
 ---
 
-# Android Bootloader Operations
+# Android Fastboot Operations
 
 ⚠️ **DANGER ZONE** - Fastboot operations write directly to device partitions. Wrong images or interrupted operations can brick devices. Always verify:
 
