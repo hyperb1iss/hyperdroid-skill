@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "description": "Comprehensive Android development skills - ADB mastery, debugging, fastboot, ROM building, and LineageOS development",
   "author": {
-    "name": "Bliss"
+    "name": "Stefanie Jane",
+    "url": "https://hyperbliss.tech"
   },
-  "repository": "https://github.com/bliss/android-skill",
+  "homepage": "https://github.com/hyperb1iss/android-skill",
+  "repository": "https://github.com/hyperb1iss/android-skill",
   "license": "MIT",
   "keywords": [
     "android",

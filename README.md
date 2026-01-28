@@ -11,6 +11,7 @@
   <img src="https://img.shields.io/badge/Skills-4_Domains-e135ff?style=for-the-badge&logo=android&logoColor=white" alt="4 Skills">
   <img src="https://img.shields.io/badge/Agent-Crash_Analyzer-80ffea?style=for-the-badge&logo=robot&logoColor=black" alt="1 Agent">
   <img src="https://img.shields.io/badge/Claude_Code-Plugin-ff6ac1?style=for-the-badge&logo=anthropic&logoColor=white" alt="Claude Code">
+  <img src="https://img.shields.io/badge/skills.sh-Compatible-f1fa8c?style=for-the-badge&logo=npm&logoColor=black" alt="skills.sh">
 </p>
 
 <p align="center">
@@ -121,10 +122,22 @@ When your app or device is misbehaving, this agent:
 
 ## ⚡ Installation
 
+### Vercel Skills (npx)
+
+```bash
+# Install for all supported agents
+npx add-skill hyperb1iss/android-skill
+
+# Install for a specific agent
+npx add-skill hyperb1iss/android-skill -a cursor
+npx add-skill hyperb1iss/android-skill -a copilot
+npx add-skill hyperb1iss/android-skill -a codex
+npx add-skill hyperb1iss/android-skill -a gemini
+```
+
 ### Claude Code
 
 ```bash
-# Install the plugin
 /plugin install android-skill
 ```
 
@@ -140,6 +153,19 @@ ln -s $(pwd)/android-skill ~/.claude/plugins/android-skill
 ```bash
 claude --plugin-dir ./android-skill
 ```
+
+### Compatibility
+
+| Platform | Install Method |
+|----------|----------------|
+| **Claude Code** | `/plugin install android-skill` |
+| **Vercel Skills** | `npx add-skill hyperb1iss/android-skill` |
+| **Codex CLI** | `npx add-skill hyperb1iss/android-skill -a codex` |
+| **Cursor** | `npx add-skill hyperb1iss/android-skill -a cursor` |
+| **GitHub Copilot** | `npx add-skill hyperb1iss/android-skill -a copilot` |
+| **Gemini CLI** | `npx add-skill hyperb1iss/android-skill -a gemini` |
+| **Amp** | `npx add-skill hyperb1iss/android-skill -a amp` |
+| **Opencode** | `npx add-skill hyperb1iss/android-skill -a opencode` |
 
 ## 🎯 Usage
 
@@ -213,7 +239,9 @@ Every skill is enhanced with modern Android development knowledge (2024-2026):
 ```
 android-skill/
 ├── .claude-plugin/
-│   └── plugin.json              # Claude Code manifest
+│   ├── plugin.json              # Claude Code manifest
+│   └── marketplace.json         # skills.sh distribution index
+├── AGENTS.md                    # Agent compatibility registry
 ├── skills/
 │   ├── android/
 │   │   ├── SKILL.md             # Quick reference + triggers
