@@ -16,6 +16,7 @@ adb devices -l
 ```
 
 Output shows serial, status, and device info. Common statuses:
+
 - `device` - Connected and authorized
 - `unauthorized` - Accept USB debugging prompt on device
 - `offline` - Connection issues, try `adb kill-server && adb start-server`
@@ -23,12 +24,14 @@ Output shows serial, status, and device info. Common statuses:
 ### Wireless Debugging
 
 **Android 11+ (Recommended):**
+
 1. Enable Wireless debugging in Developer Options
 2. Tap "Pair device with pairing code"
 3. Run: `adb pair <ip>:<pairing_port>` and enter the code
 4. Then: `adb connect <ip>:<connection_port>`
 
 **Legacy (requires USB first):**
+
 ```bash
 adb tcpip 5555
 adb connect <device_ip>:5555
@@ -37,6 +40,7 @@ adb connect <device_ip>:5555
 ### Multiple Devices
 
 Always specify device with `-s`:
+
 ```bash
 adb -s <serial> shell
 adb -s emulator-5554 install app.apk
@@ -77,6 +81,7 @@ top -n 1 -m 10
 ### Safe Output Limiting
 
 For commands with potentially large output:
+
 ```bash
 adb shell "logcat -d | head -500"
 adb shell "dumpsys activity | head -200"
@@ -188,12 +193,12 @@ adb shell input keyevent KEYCODE_VOLUME_UP # Volume up
 
 ### Common Keycodes
 
-| Code | Key | Code | Key |
-|------|-----|------|-----|
-| 3 | HOME | 4 | BACK |
-| 24 | VOL_UP | 25 | VOL_DOWN |
-| 26 | POWER | 66 | ENTER |
-| 67 | DEL | 82 | MENU |
+| Code | Key    | Code | Key      |
+| ---- | ------ | ---- | -------- |
+| 3    | HOME   | 4    | BACK     |
+| 24   | VOL_UP | 25   | VOL_DOWN |
+| 26   | POWER  | 66   | ENTER    |
+| 67   | DEL    | 82   | MENU     |
 
 ### Screenshots & Recording
 
@@ -262,6 +267,7 @@ adb shell dumpsys meminfo com.example.app
 ```
 
 Key metrics:
+
 - **PSS**: Proportional memory use (compare apps with this)
 - **Private Dirty**: Memory exclusive to process
 - **Heap**: Java/Native heap usage
@@ -337,18 +343,22 @@ adb reboot-bootloader        # Alias for bootloader
 ## Troubleshooting
 
 **Device not found:**
+
 ```bash
 adb kill-server && adb start-server
 ```
 
 **Unauthorized:**
+
 - Check USB debugging is enabled
 - Revoke USB debugging authorizations in Developer Options, reconnect
 
 **Multiple devices error:**
+
 - Use `-s <serial>` to specify device
 
 **Command not found (on device):**
+
 - Some commands require root or are version-specific
 - Try `/system/bin/<cmd>` or check if command exists
 
@@ -356,19 +366,19 @@ adb kill-server && adb start-server
 
 ## Quick Reference
 
-| Task | Command |
-|------|---------|
-| List devices | `adb devices -l` |
-| Install app | `adb install -r -g app.apk` |
-| Start app | `adb shell monkey -p pkg -c android.intent.category.LAUNCHER 1` |
-| Stop app | `adb shell am force-stop pkg` |
-| Screenshot | `adb exec-out screencap -p > screen.png` |
-| Logs | `adb logcat -d -t 100` |
-| Shell | `adb shell` |
-| Push file | `adb push local /sdcard/` |
-| Pull file | `adb pull /sdcard/file ./` |
-| Tap | `adb shell input tap X Y` |
-| Back | `adb shell input keyevent 4` |
-| Home | `adb shell input keyevent 3` |
+| Task         | Command                                                         |
+| ------------ | --------------------------------------------------------------- |
+| List devices | `adb devices -l`                                                |
+| Install app  | `adb install -r -g app.apk`                                     |
+| Start app    | `adb shell monkey -p pkg -c android.intent.category.LAUNCHER 1` |
+| Stop app     | `adb shell am force-stop pkg`                                   |
+| Screenshot   | `adb exec-out screencap -p > screen.png`                        |
+| Logs         | `adb logcat -d -t 100`                                          |
+| Shell        | `adb shell`                                                     |
+| Push file    | `adb push local /sdcard/`                                       |
+| Pull file    | `adb pull /sdcard/file ./`                                      |
+| Tap          | `adb shell input tap X Y`                                       |
+| Back         | `adb shell input keyevent 4`                                    |
+| Home         | `adb shell input keyevent 3`                                    |
 
 For deep dives into specific topics, see `references/deep-dive.md`.

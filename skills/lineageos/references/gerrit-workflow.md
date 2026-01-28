@@ -97,14 +97,14 @@ repopick -t my-topic
 
 ### Options
 
-| Flag | Purpose |
-|------|---------|
-| `-f` | Force (overwrite local changes) |
-| `-n` | Dry run (show what would happen) |
-| `-Q` | Include dependencies |
-| `-i` | Interactive (prompt for each) |
-| `-c` | Check only (don't apply) |
-| `-t <topic>` | Pick all changes in topic |
+| Flag         | Purpose                          |
+| ------------ | -------------------------------- |
+| `-f`         | Force (overwrite local changes)  |
+| `-n`         | Dry run (show what would happen) |
+| `-Q`         | Include dependencies             |
+| `-i`         | Interactive (prompt for each)    |
+| `-c`         | Check only (don't apply)         |
+| `-t <topic>` | Pick all changes in topic        |
 
 ### Common Patterns
 
@@ -152,21 +152,21 @@ git push ssh://... HEAD:refs/for/lineage-21.0
 
 ### Voting
 
-| Score | Meaning |
-|-------|---------|
-| +2 | Approved (can merge) |
-| +1 | Looks good to me |
-| 0 | No opinion |
-| -1 | Needs improvement |
-| -2 | Do not merge |
+| Score | Meaning              |
+| ----- | -------------------- |
+| +2    | Approved (can merge) |
+| +1    | Looks good to me     |
+| 0     | No opinion           |
+| -1    | Needs improvement    |
+| -2    | Do not merge         |
 
 ### Verified
 
-| Score | Meaning |
-|-------|---------|
-| +1 | Builds and works |
-| 0 | Not tested |
-| -1 | Doesn't build or breaks something |
+| Score | Meaning                           |
+| ----- | --------------------------------- |
+| +1    | Builds and works                  |
+| 0     | Not tested                        |
+| -1    | Doesn't build or breaks something |
 
 ---
 
@@ -207,15 +207,16 @@ git push ...
 
 Common projects and their paths:
 
-| Project | Path |
-|---------|------|
-| `LineageOS/android_frameworks_base` | frameworks/base |
+| Project                                    | Path                   |
+| ------------------------------------------ | ---------------------- |
+| `LineageOS/android_frameworks_base`        | frameworks/base        |
 | `LineageOS/android_packages_apps_Settings` | packages/apps/Settings |
-| `LineageOS/android_system_core` | system/core |
-| `LineageOS/android_vendor_lineage` | vendor/lineage |
-| `LineageOS/android_device_*` | device/* |
+| `LineageOS/android_system_core`            | system/core            |
+| `LineageOS/android_vendor_lineage`         | vendor/lineage         |
+| `LineageOS/android_device_*`               | device/\*              |
 
 Find project name:
+
 ```bash
 cd <directory>
 git remote -v

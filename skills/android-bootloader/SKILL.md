@@ -6,6 +6,7 @@ description: Use for fastboot operations, flashing partitions, bootloader unlock
 # Android Bootloader Operations
 
 ⚠️ **DANGER ZONE** - Fastboot operations write directly to device partitions. Wrong images or interrupted operations can brick devices. Always verify:
+
 1. Correct device (check `fastboot getvar product`)
 2. Correct images for exact device model
 3. Bootloader is unlocked (for flashing)
@@ -65,13 +66,13 @@ fastboot flashing unlock
 
 ### Other Manufacturers
 
-| Brand | Process |
-|-------|---------|
-| OnePlus | `fastboot oem unlock` |
-| Xiaomi | Mi Unlock Tool (waiting period) |
-| Samsung | Uses Odin, not fastboot |
+| Brand    | Process                                                 |
+| -------- | ------------------------------------------------------- |
+| OnePlus  | `fastboot oem unlock`                                   |
+| Xiaomi   | Mi Unlock Tool (waiting period)                         |
+| Samsung  | Uses Odin, not fastboot                                 |
 | Motorola | Request code from website, `fastboot oem unlock <code>` |
-| Sony | Request code from website |
+| Sony     | Request code from website                               |
 
 ### Check Unlock Status
 
@@ -252,11 +253,11 @@ fastboot -w update image.zip
 
 ## Danger Levels
 
-| Level | Operations |
-|-------|------------|
-| ✅ SAFE | `devices`, `getvar`, `reboot`, `boot` (temp) |
-| ⚠️ MEDIUM | `flash boot/recovery/dtbo`, `set_active` |
-| 🔴 HIGH | `flash system/vendor`, `erase`, `-w` |
+| Level       | Operations                                                        |
+| ----------- | ----------------------------------------------------------------- |
+| ✅ SAFE     | `devices`, `getvar`, `reboot`, `boot` (temp)                      |
+| ⚠️ MEDIUM   | `flash boot/recovery/dtbo`, `set_active`                          |
+| 🔴 HIGH     | `flash system/vendor`, `erase`, `-w`                              |
 | ☠️ CRITICAL | `flash bootloader`, `flash radio`, `flashing lock` with custom OS |
 
 ---
@@ -264,12 +265,14 @@ fastboot -w update image.zip
 ## Brick Prevention
 
 **Never:**
+
 - Flash images from different device models
 - Interrupt a flash operation
 - Lock bootloader with custom ROM installed
 - Flash bootloader/radio without matching versions
 
 **Always:**
+
 - Verify device with `fastboot getvar product`
 - Keep stock images available for recovery
 - Use `fastboot boot` to test before `fastboot flash`
@@ -304,14 +307,14 @@ For hard bricks (no fastboot access), you need EDL mode (Qualcomm) or manufactur
 
 ## Quick Reference
 
-| Task | Command |
-|------|---------|
-| Check connection | `fastboot devices` |
-| Device info | `fastboot getvar all` |
-| Unlock bootloader | `fastboot flashing unlock` |
-| Flash boot | `fastboot flash boot boot.img` |
-| Test recovery | `fastboot boot twrp.img` |
-| Current slot | `fastboot getvar current-slot` |
-| Switch slot | `fastboot set_active a` |
-| Wipe data | `fastboot -w` |
-| Reboot | `fastboot reboot` |
+| Task              | Command                        |
+| ----------------- | ------------------------------ |
+| Check connection  | `fastboot devices`             |
+| Device info       | `fastboot getvar all`          |
+| Unlock bootloader | `fastboot flashing unlock`     |
+| Flash boot        | `fastboot flash boot boot.img` |
+| Test recovery     | `fastboot boot twrp.img`       |
+| Current slot      | `fastboot getvar current-slot` |
+| Switch slot       | `fastboot set_active a`        |
+| Wipe data         | `fastboot -w`                  |
+| Reboot            | `fastboot reboot`              |

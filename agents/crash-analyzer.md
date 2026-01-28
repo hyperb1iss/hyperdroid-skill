@@ -26,6 +26,7 @@ If no device is connected, inform the user and stop.
 ### 2. Identify Crash Type
 
 Ask the user or determine from context:
+
 - **Java/Kotlin crash** - Stack trace in logcat
 - **Native crash** - Tombstone files, SIGSEGV/SIGABRT
 - **ANR** - Application Not Responding, UI thread blocked
@@ -34,6 +35,7 @@ Ask the user or determine from context:
 ### 3. Collect Artifacts
 
 **For Java crashes:**
+
 ```bash
 # Recent crash logs
 adb logcat -b crash -d -t 100
@@ -46,6 +48,7 @@ adb logcat --pid=$(adb shell pidof -s <package>) -d -t 200
 ```
 
 **For Native crashes:**
+
 ```bash
 # List tombstones
 adb shell ls -la /data/tombstones/ 2>/dev/null
@@ -58,6 +61,7 @@ adb shell dmesg | tail -50
 ```
 
 **For ANRs:**
+
 ```bash
 # ANR traces
 adb shell cat /data/anr/traces.txt 2>/dev/null
@@ -68,6 +72,7 @@ adb shell dumpsys activity lastanr
 ```
 
 **General:**
+
 ```bash
 # DropBox entries
 adb shell dumpsys dropbox --print data_app_crash 2>/dev/null | head -100
@@ -77,16 +82,19 @@ adb shell dumpsys dropbox --print data_app_anr 2>/dev/null | head -100
 ### 4. Analyze
 
 **For Java crashes, look for:**
+
 - Exception type (NullPointerException, IllegalStateException, etc.)
 - "Caused by:" chain
 - First line in app package
 
 **For Native crashes, identify:**
+
 - Signal (SIGSEGV = null pointer, SIGABRT = assertion/abort)
 - Fault address
 - Backtrace - first frames in app code
 
 **For ANRs, check:**
+
 - Main thread state (waiting? blocked? running?)
 - Lock contention
 - Long-running operations on main thread
@@ -95,6 +103,7 @@ adb shell dumpsys dropbox --print data_app_anr 2>/dev/null | head -100
 ### 5. Report
 
 Provide:
+
 1. **Crash Type** - Java/Native/ANR
 2. **Root Cause** - What went wrong
 3. **Stack Trace** - Relevant portion
@@ -111,10 +120,12 @@ Provide:
 
 ### Stack Trace
 ```
+
 java.lang.NullPointerException: Attempt to invoke virtual method 'void ...' on a null object reference
-    at com.example.myapp.MainActivity.onCreate(MainActivity.kt:45)
-    at android.app.Activity.performCreate(Activity.java:8051)
-```
+at com.example.myapp.MainActivity.onCreate(MainActivity.kt:45)
+at android.app.Activity.performCreate(Activity.java:8051)
+
+````
 
 ### Root Cause
 The `userProfile` variable is null when accessed in `onCreate()`. This likely means the user data wasn't loaded before the activity started.
@@ -127,7 +138,8 @@ userProfile?.let { profile ->
 } ?: run {
     // Handle null case
 }
-```
+````
+
 ```
 
 ## Tips
@@ -136,3 +148,4 @@ userProfile?.let { profile ->
 - ANR traces can be large - focus on the main thread
 - For native crashes, check if the crash is in app code or system libraries
 - If package is known, filter by PID for cleaner logs
+```

@@ -16,6 +16,7 @@ breakfast oriole          # Pixel 6
 ```
 
 This will:
+
 1. Set up lunch target
 2. Sync device-specific repos
 3. Sync kernel and vendor repos
@@ -83,7 +84,7 @@ device/<vendor>/<device>/
 └── vendorsetup.sh          # Add to lunch menu
 ```
 
-### lineage_<device>.mk
+### lineage\_<device>.mk
 
 ```makefile
 # Inherit from device
@@ -322,12 +323,12 @@ m vendorimage
 
 ## Quick Reference
 
-| Task | Command |
-|------|---------|
-| Setup device | `breakfast <device>` |
-| Full build | `brunch <device>` |
-| Build ZIP | `mka bacon` |
-| Cherry-pick | `repopick <number>` |
-| Sync all | `repo sync` |
-| Sync device | `repo sync device/vendor/device` |
-| Clean build | `m clean && brunch <device>` |
+| Task         | Command                          |
+| ------------ | -------------------------------- |
+| Setup device | `breakfast <device>`             |
+| Full build   | `brunch <device>`                |
+| Build ZIP    | `mka bacon`                      |
+| Cherry-pick  | `repopick <number>`              |
+| Sync all     | `repo sync`                      |
+| Sync device  | `repo sync device/vendor/device` |
+| Clean build  | `m clean && brunch <device>`     |

@@ -128,11 +128,11 @@ lunch lineage_cheeseburger-userdebug  # OnePlus 5
 
 ### Variants
 
-| Variant | Root | Debug | Use Case |
-|---------|------|-------|----------|
-| user | No | No | Production |
-| userdebug | Yes | Yes | Development (most common) |
-| eng | Yes | Full | Engineering/testing |
+| Variant   | Root | Debug | Use Case                  |
+| --------- | ---- | ----- | ------------------------- |
+| user      | No   | No    | Production                |
+| userdebug | Yes  | Yes   | Development (most common) |
+| eng       | Yes  | Full  | Engineering/testing       |
 
 ---
 
@@ -344,6 +344,7 @@ m
 ### Missing Blobs
 
 Check logcat for:
+
 ```
 E ServiceManager: Could not find service <name>
 E linker: cannot find symbol

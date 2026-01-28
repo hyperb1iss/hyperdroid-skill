@@ -4,45 +4,45 @@
 
 ### Boot Partitions
 
-| Partition | Purpose | A/B Naming |
-|-----------|---------|------------|
-| `boot` | Kernel + ramdisk | `boot_a`, `boot_b` |
-| `init_boot` | Init ramdisk (Android 13+) | `init_boot_a`, `init_boot_b` |
-| `vendor_boot` | Vendor ramdisk (GKI) | `vendor_boot_a`, `vendor_boot_b` |
-| `recovery` | Recovery (non-A/B only) | N/A on A/B devices |
-| `dtbo` | Device tree overlay | `dtbo_a`, `dtbo_b` |
-| `vbmeta` | Verified boot metadata | `vbmeta_a`, `vbmeta_b` |
+| Partition     | Purpose                    | A/B Naming                       |
+| ------------- | -------------------------- | -------------------------------- |
+| `boot`        | Kernel + ramdisk           | `boot_a`, `boot_b`               |
+| `init_boot`   | Init ramdisk (Android 13+) | `init_boot_a`, `init_boot_b`     |
+| `vendor_boot` | Vendor ramdisk (GKI)       | `vendor_boot_a`, `vendor_boot_b` |
+| `recovery`    | Recovery (non-A/B only)    | N/A on A/B devices               |
+| `dtbo`        | Device tree overlay        | `dtbo_a`, `dtbo_b`               |
+| `vbmeta`      | Verified boot metadata     | `vbmeta_a`, `vbmeta_b`           |
 
 ### System Partitions (Dynamic on Android 10+)
 
-| Partition | Purpose |
-|-----------|---------|
-| `super` | Container for dynamic partitions |
-| `system` | Android OS |
-| `system_ext` | System extensions |
-| `vendor` | Vendor HALs and binaries |
-| `product` | Product customizations |
-| `odm` | ODM customizations |
+| Partition    | Purpose                          |
+| ------------ | -------------------------------- |
+| `super`      | Container for dynamic partitions |
+| `system`     | Android OS                       |
+| `system_ext` | System extensions                |
+| `vendor`     | Vendor HALs and binaries         |
+| `product`    | Product customizations           |
+| `odm`        | ODM customizations               |
 
 ### Data Partitions
 
-| Partition | Purpose |
-|-----------|---------|
-| `userdata` | User data (apps, files) |
-| `cache` | Cache (non-A/B) |
-| `metadata` | Encryption metadata |
-| `misc` | Bootloader communication |
-| `persist` | Factory calibration data |
+| Partition  | Purpose                  |
+| ---------- | ------------------------ |
+| `userdata` | User data (apps, files)  |
+| `cache`    | Cache (non-A/B)          |
+| `metadata` | Encryption metadata      |
+| `misc`     | Bootloader communication |
+| `persist`  | Factory calibration data |
 
 ### Critical Partitions (⚠️ Careful!)
 
-| Partition | Purpose | Risk |
-|-----------|---------|------|
-| `bootloader` | Device bootloader | Hard brick if wrong |
-| `radio` / `modem` | Baseband firmware | Hard brick if wrong |
-| `aboot` | Bootloader (older) | Hard brick |
-| `sbl` | Secondary bootloader | Hard brick |
-| `tz` | TrustZone | Hard brick |
+| Partition         | Purpose              | Risk                |
+| ----------------- | -------------------- | ------------------- |
+| `bootloader`      | Device bootloader    | Hard brick if wrong |
+| `radio` / `modem` | Baseband firmware    | Hard brick if wrong |
+| `aboot`           | Bootloader (older)   | Hard brick          |
+| `sbl`             | Secondary bootloader | Hard brick          |
+| `tz`              | TrustZone            | Hard brick          |
 
 ---
 
@@ -75,6 +75,7 @@ fastboot --slot=other flash boot boot.img # Flash inactive slot
 ### Recovery on A/B
 
 On A/B devices, recovery is part of `boot.img`, not a separate partition. To install custom recovery:
+
 ```bash
 fastboot flash boot twrp-boot.img
 # Or boot temporarily:

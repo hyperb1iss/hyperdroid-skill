@@ -75,6 +75,7 @@ This skill covers building Android apps via Gradle CLI and building custom ROMs 
 ### Signing
 
 Debug keystore location:
+
 - Linux: `~/.android/debug.keystore`
 - macOS: `~/.android/debug.keystore`
 - Windows: `C:\Users\<user>\.android\debug.keystore`
@@ -191,11 +192,11 @@ m -j$(nproc)
 
 ### Build Variants
 
-| Variant | Purpose |
-|---------|---------|
-| `user` | Production, no root, limited debugging |
-| `userdebug` | Like user + root + debugging |
-| `eng` | Development, all debug tools |
+| Variant     | Purpose                                |
+| ----------- | -------------------------------------- |
+| `user`      | Production, no root, limited debugging |
+| `userdebug` | Like user + root + debugging           |
+| `eng`       | Development, all debug tools           |
 
 ### Common Targets
 
@@ -258,6 +259,7 @@ device/<vendor>/<device>/
 ### Key Files
 
 **BoardConfig.mk** - Hardware configuration:
+
 ```makefile
 TARGET_ARCH := arm64
 TARGET_BOARD_PLATFORM := <platform>
@@ -267,6 +269,7 @@ BOARD_BOOT_HEADER_VERSION := 4
 ```
 
 **device.mk** - Device packages:
+
 ```makefile
 PRODUCT_PACKAGES += \
     android.hardware.audio@7.0-impl \
@@ -358,23 +361,23 @@ m 2>&1 | tee build.log
 
 ### Gradle
 
-| Task | Command |
-|------|---------|
-| Build debug | `./gradlew assembleDebug` |
+| Task          | Command                     |
+| ------------- | --------------------------- |
+| Build debug   | `./gradlew assembleDebug`   |
 | Build release | `./gradlew assembleRelease` |
-| Install | `./gradlew installDebug` |
-| Test | `./gradlew test` |
-| Lint | `./gradlew lint` |
-| Clean | `./gradlew clean` |
-| Dependencies | `./gradlew dependencies` |
+| Install       | `./gradlew installDebug`    |
+| Test          | `./gradlew test`            |
+| Lint          | `./gradlew lint`            |
+| Clean         | `./gradlew clean`           |
+| Dependencies  | `./gradlew dependencies`    |
 
 ### AOSP/LineageOS
 
-| Task | Command |
-|------|---------|
-| Setup env | `source build/envsetup.sh` |
+| Task          | Command                    |
+| ------------- | -------------------------- |
+| Setup env     | `source build/envsetup.sh` |
 | Select device | `lunch <device>-userdebug` |
-| Full build | `m` |
-| LineageOS zip | `mka bacon` |
-| Just boot | `mka bootimage` |
-| Sync | `repo sync -c -j$(nproc)` |
+| Full build    | `m`                        |
+| LineageOS zip | `mka bacon`                |
+| Just boot     | `mka bootimage`            |
+| Sync          | `repo sync -c -j$(nproc)`  |

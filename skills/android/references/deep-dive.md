@@ -211,6 +211,7 @@ adb pull /data/tombstones/
 ```
 
 **Key sections:**
+
 - Signal (SIGSEGV, SIGABRT, etc.)
 - Fault address
 - Register state
@@ -231,6 +232,7 @@ adb shell cat /data/anr/anr_*           # Newer devices
 ```
 
 Look for:
+
 - Main thread state
 - Lock contention
 - Long operations on main thread

@@ -49,14 +49,14 @@ mka bacon
 
 ## Essential Commands
 
-| Command | Purpose |
-|---------|---------|
+| Command              | Purpose                          |
+| -------------------- | -------------------------------- |
 | `breakfast <device>` | Setup device + sync dependencies |
-| `brunch <device>` | breakfast + full build |
-| `mka bacon` | Build flashable ZIP |
-| `mka bootimage` | Build kernel only |
-| `mka systemimage` | Build system only |
-| `repopick <change>` | Cherry-pick from Gerrit |
+| `brunch <device>`    | breakfast + full build           |
+| `mka bacon`          | Build flashable ZIP              |
+| `mka bootimage`      | Build kernel only                |
+| `mka systemimage`    | Build system only                |
+| `repopick <change>`  | Cherry-pick from Gerrit          |
 
 ---
 
@@ -74,7 +74,7 @@ device/<vendor>/<device>/
 └── extract-files.sh         # Vendor blob extraction
 ```
 
-### lineage_<device>.mk
+### lineage\_<device>.mk
 
 ```makefile
 # Inherit device
@@ -206,13 +206,13 @@ PRODUCT_PACKAGES += \
 
 ## Key Directories
 
-| Path | Purpose |
-|------|---------|
-| `vendor/lineage/` | LineageOS additions |
-| `lineage-sdk/` | LineageOS SDK |
-| `device/<vendor>/<device>/` | Device tree |
-| `kernel/<vendor>/<device>/` | Kernel source |
-| `vendor/<vendor>/` | Proprietary blobs |
+| Path                        | Purpose             |
+| --------------------------- | ------------------- |
+| `vendor/lineage/`           | LineageOS additions |
+| `lineage-sdk/`              | LineageOS SDK       |
+| `device/<vendor>/<device>/` | Device tree         |
+| `kernel/<vendor>/<device>/` | Kernel source       |
+| `vendor/<vendor>/`          | Proprietary blobs   |
 
 ---
 
@@ -277,6 +277,7 @@ adb shell dmesg | audit2allow -p out/target/product/<device>/root/sepolicy
 ### Missing Blobs
 
 Check logcat for:
+
 ```
 E linker: cannot find symbol...
 E ServiceManager: Could not find service...
